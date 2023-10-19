@@ -6,9 +6,32 @@ namespace Calculadora
     {
         static void Main(string[] args)
         {
-            Soma();
+            Menu();
         }
-        
+
+        static void Menu()
+        {
+            Console.Clear();
+            Console.WriteLine("Oque deseja fazer? ");
+            Console.WriteLine("1 - Soma");
+            Console.WriteLine("2 - Subtração");
+            Console.WriteLine("3 - Divisão");
+            Console.WriteLine("4 - Multiplicação");
+
+            Console.WriteLine("----------------");
+            Console.WriteLine("Selecione uma Opção");
+            short res = short.Parse(Console.ReadLine());
+
+            switch(res) {
+                case 1: Soma(); break;
+                case 2: Subtracao(); break;
+                case 3: Divisao(); break;
+                case 4: Multiplicacao(); break;
+                default: Menu(); break;
+
+            }
+        }
+
         static void Soma()
         {
             Console.Clear();
@@ -23,6 +46,7 @@ namespace Calculadora
 
             Console.WriteLine($"O valor da Soma deu: {res}");
             Console.ReadKey();
+            Menu();
         }
 
         static void Subtracao()
@@ -39,6 +63,7 @@ namespace Calculadora
 
             Console.WriteLine($"O valor da Subtração deu: {res}");
             Console.ReadKey();
+            Menu();
         }
         
         static void Divisao()
@@ -55,6 +80,7 @@ namespace Calculadora
 
             Console.WriteLine($"A Divisão que você escolheu deu: {res}");
             Console.ReadKey();
+            Menu();
         }
 
         static void Multiplicacao()
@@ -71,6 +97,7 @@ namespace Calculadora
 
             Console.WriteLine($"A Multiplicação deu: {res}");
             Console.ReadKey();
+            Menu();
         }
 
 
